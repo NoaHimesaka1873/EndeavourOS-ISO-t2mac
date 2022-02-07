@@ -15,13 +15,11 @@ jobs:
         cd /etc/pacman.d/
         wget https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist
         cd ..
-        cat << EOF >> pacman.conf
-        
-        [endeavouros]
-        SigLevel = PackageRequired
-        Include = /etc/pacman.d/endeavouros-mirrorlist
-
-        EOF
+        echo "\n" >> pacman.conf
+        echo "[endeavouros]" >> pacman.conf
+        echo "SigLevel = PackageRequired" >> pacman.conf
+        echo "Include = /etc/pacman.d/endeavouros-mirrorlist" >> pacman.conf
+        echo "\n" >> pacman.conf
         cd /build
         useradd builduser -m
         passwd -d builduser
