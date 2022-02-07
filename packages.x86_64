@@ -1,5 +1,4 @@
 #base-system
-amd-ucode
 base
 base-devel
 cryptsetup
