@@ -11,15 +11,30 @@ jobs:
       if: ${{ !contains(github.event.head_commit.message, '[no build]') }}
       run: |
         cat << EOF > entrypoint.sh
+        pacman -Syu wget --needed --noconfirm
+        cd /etc/pacman.d/
+        wget https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist
+        cd ..
+        cat << EOF >> pacman.conf
+        
+        [endeavouros]
+        SigLevel = PackageRequired
+        Include = /etc/pacman.d/endeavouros-mirrorlist
+
+        EOF
         cd /build
         useradd builduser -m
         passwd -d builduser
         pacman -Syu --noconfirm --needed sudo git base-devel
+        pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed --noconfirm
         printf 'builduser ALL=(ALL) ALL\\n' | tee -a /etc/sudoers
         chown -R builduser:builduser ./
         ./fix_permissions.sh
         ./mkarchiso "."
         EOF
+
+        
+        
 
         docker run --privileged -t -v $PWD:/build archlinux /bin/bash /build/entrypoint.sh
     
