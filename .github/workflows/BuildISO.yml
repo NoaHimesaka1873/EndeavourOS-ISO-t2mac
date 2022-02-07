@@ -1,0 +1,52 @@
+name: Build EOS ISO
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      if: ${{ !contains(github.event.head_commit.message, '[no build]') }}
+      uses: actions/checkout@v2
+    - name: Build In Docker
+      if: ${{ !contains(github.event.head_commit.message, '[no build]') }}
+      run: |
+        cat << EOF > entrypoint.sh
+        cd /build
+        useradd builduser -m
+        passwd -d builduser
+        pacman -Syu --noconfirm --needed sudo git base-devel
+        printf 'builduser ALL=(ALL) ALL\\n' | tee -a /etc/sudoers
+        chown -R builduser:builduser ./
+        ./fix_permissions.sh
+        ./mkarchiso "."
+        EOF
+
+        docker run --privileged -t -v $PWD:/build archlinux /bin/bash /build/entrypoint.sh
+    
+    - name: Upload Built ISO
+      if: ${{ github.ref == 'refs/heads/senpai' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: built-iso
+        path: ${{ github.workspace }}/out/*.iso
+    - name: Create Tag
+      id: create_tag
+      if: ${{ github.ref == 'refs/heads/senpai' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
+      run: |
+        export TAG=$(date +%Y.%m.%d)
+        echo "::set-output name=tag::${TAG}"
+        echo $TAG
+    - name: Release
+      if: ${{ github.ref == 'refs/heads/senpai' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
+      uses: softprops/action-gh-release@v1
+      with:
+         files: |
+           ${{ github.workspace }}/out/*.iso
+         tag_name: ${{ steps.create_tag.outputs.tag }}
+         name: ${{ steps.create_tag.outputs.tag }} 
+         draft: ${{ contains(github.event.head_commit.message, '[draft]') }}
+         prerelease: ${{ contains(github.event.head_commit.message, '[prerel]') }}
+         body: |
+           Follow [this guide](https://wiki.t2linux.org/distributions/arch/installation/) using this ISO to install Arch on your T2 Mac 
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
