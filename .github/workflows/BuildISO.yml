@@ -14,7 +14,7 @@ jobs:
         pacman -Syu wget --needed --noconfirm
         cd /etc/pacman.d/
         wget https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist
-        echo endeavouros-mirrorlist
+        cat endeavouros-mirrorlist
         cd ..
         printf "\n" >> pacman.conf
         echo "[endeavouros]" >> pacman.conf
