@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="endeavouros"
-iso_label="EOS_$(date +%Y%m)"
-iso_publisher="EndeavourOS <https://endeavouros.com>"
-iso_application="EndeavourOS Live/Rescue CD"
+iso_name="endeavouros-t2"
+iso_label="EOS_T2_$(date +%Y%m)"
+iso_publisher="Linux for T2 <https://t2linux.org>"
+iso_application="EndeavourOS Live/Rescue CD for Apple T2-based devices"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
