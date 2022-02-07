@@ -22,7 +22,7 @@ jobs:
         echo "Include = /etc/pacman.d/endeavouros-mirrorlist" >> pacman.conf
         printf "\n" >> pacman.conf
         cat pacman.conf
-        sudo pacman-key --recv-keys 8BE1FEE14302371DEF6F910A0E5877AC225D1980 --keyserver hkps://keyserver.ubuntu.com
+        pacman-key --recv-keys 8BE1FEE14302371DEF6F910A0E5877AC225D1980 --keyserver hkps://keyserver.ubuntu.com
         cd /build
         useradd builduser -m
         passwd -d builduser
