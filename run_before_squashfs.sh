@@ -23,6 +23,10 @@ arch_chroot "$(cat << EOF
 # start chrooted commandlist #
 ##############################
 
+pacman-key --init
+pacman-key --recv-keys 8BE1FEE14302371DEF6F910A0E5877AC225D1980 --keyserver hkps://keyserver.ubuntu.com
+pacman-key --lsign-key 8BE1FEE14302371DEF6F910A0E5877AC225D1980
+
 # prepare livesession settings and user
 sed -i 's/#\(en_US\.UTF-8\)/\1/' "/etc/locale.gen"
 locale-gen
@@ -104,12 +108,9 @@ rm "mkinitcpio.conf" "/root/mkinitcpio.patch"
 
 # remove unneeded grub stuff from /boot
 # rm "/boot/grub/grub.cfg" #archiso does not create it anymore
-rm -R "/boot/syslinux"
-rm -R "/boot/memtest86+"
-rm "/boot/amd-ucode.img"
-rm "/boot/initramfs-linux.img"
+rm "/boot/initramfs-linux-t2.img"
 rm "/boot/intel-ucode.img"
-rm "/boot/vmlinuz-linux"
+rm "/boot/vmlinuz-linux-t2"
 
 # to install locally builded packages on ISO:
 #pacman -U --noconfirm "/root/calamares_current-3.2.44.3-4-any.pkg.tar.zst"

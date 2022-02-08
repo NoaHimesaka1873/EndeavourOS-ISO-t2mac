@@ -20,6 +20,7 @@ man-db
 man-pages
 mdadm
 mkinitcpio
+mkinitcpio-archiso
 mkinitcpio-busybox
 mkinitcpio-nfs-utils
 nano
