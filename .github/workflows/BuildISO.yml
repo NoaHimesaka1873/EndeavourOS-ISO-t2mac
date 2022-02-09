@@ -66,6 +66,7 @@ jobs:
          draft: ${{ contains(github.event.head_commit.message, '[draft]') }}
          prerelease: ${{ contains(github.event.head_commit.message, '[prerel]') }}
          body: |
-           Follow [this guide](https://wiki.t2linux.org/distributions/arch/installation/) using this ISO to install Arch on your T2 Mac 
+           WARNING! DO NOT INSTALL COMMUNITY EDITIONS! THEY ARE NOT TESTED AND WILL *NOT* WORK!!!
+           Follow [this guide](https://wiki.t2linux.org/distributions/arch/installation/) using this ISO to install EndeavourOS on your T2 Mac 
       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
