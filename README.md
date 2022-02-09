@@ -1,4 +1,4 @@
-# EndeavourOS-ISO
+# EndeavourOS-ISO-t2
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
@@ -6,17 +6,23 @@ New merged repository structure (october 2021) by joekamprad.
 now `live-user-desktop-settings` are included under `/airootfs/root/liveuser-desktop-settings`
 
 ### Developers:
+- [NoaHimesaka1873](https://github.com/NoaHimesaka1873)
 - [joekamprad](https://github.com/killajoe)
 - [manuel](https://github.com/manuel-192)
 - [fernandomaroto](https://github.com/Portergos) (initial developer)
 - our beloved community
 
-This ISO is based on hugely modified Arch-ISO to provide Installation Environment for EndeavourOS.  
+This ISO is based on hugely modified EndeavourOS-ISO to provide Installation Environment for EndeavourOS.  
 More info at [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io/EndeavourOS-Development/)
+TBD: Add T2linux wiki entry and link it to here
 
+# t2linux Resources
 
+- https://t2linux.org
+- [Redecorating](https://github.com/Redecorating) for awesome linux-t2 kernel
+- All people on t2linux Discord for helping & supporting us!
 
-# Resources
+# EOS Original Resources
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-installer-iso-nov-2021.png" alt="drawing" width="600"/>
 
@@ -32,14 +38,15 @@ Our journey wouldn't be made possible without the generosity of our [Open Collec
 
 ### Development source
 
-- [EndeavourOS-ISO source](https://github.com/endeavouros-team/EndeavourOS-ISO) (Live environment with XFCE4-Desktop)
-- [EndeavourOS-calamares](https://github.com/endeavouros-team/EndeavourOS-calamares) (installer framework)
+
+- [EndeavourOS-calamares (T2 Edition)](https://github.com/t2linux/EndeavourOS-calamares-t2) (installer framework)
 
 
 ### Base source
 
 - [Arch-ISO](https://gitlab.archlinux.org/archlinux/archiso)
 - [Calamares](https://github.com/calamares/calamares)
+- [EndeavourOS-ISO source](https://github.com/endeavouros-team/EndeavourOS-ISO) (Live environment with XFCE4-Desktop)
 
 
 
@@ -48,18 +55,11 @@ Our journey wouldn't be made possible without the generosity of our [Open Collec
 Systemd-boot for UEFI systems:  
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/systemd-boot-iso-nov21.png" alt="drawing" width="600"/>
 
-Bios-boot (syslinux) for legacy systems:  
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-iso-syslinux-nov2021.png" alt="drawing" width="600"/>
-
 
 
 # How to build ISO
 
-You need to use an installed EndeavourOS system or any archbased system with EndeavourOS [repository](https://github.com/endeavouros-team/mirrors) enabled.
-
-As the installer packages and needed dependencies will get installed from EndeavourOS repository.
-
-general information: https://endeavouros-team.github.io/EndeavourOS-Development/
+Just follow what GH Workflow does. It's simple.
 
 ### Install build dependencies
 
