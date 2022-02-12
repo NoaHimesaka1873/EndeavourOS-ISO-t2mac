@@ -6,7 +6,7 @@ New merged repository structure (october 2021) by joekamprad.
 now `live-user-desktop-settings` are included under `/airootfs/root/liveuser-desktop-settings`
 
 ### Developers:
-- [NoaHimesaka1873](https://github.com/NoaHimesaka1873)
+- [NoaHimesaka1873](https://github.com/NoaHimesaka1873) (t2linux)
 - [joekamprad](https://github.com/killajoe)
 - [manuel](https://github.com/manuel-192)
 - [fernandomaroto](https://github.com/Portergos) (initial developer)
@@ -14,7 +14,7 @@ now `live-user-desktop-settings` are included under `/airootfs/root/liveuser-des
 
 This ISO is based on hugely modified EndeavourOS-ISO to provide Installation Environment for EndeavourOS.  
 More info at [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io/EndeavourOS-Development/)
-TBD: Add T2linux wiki entry and link it to here
+Read the instuction at [t2linux wiki](https://wiki.t2linux.org/distributions/endeavouros/installation/)
 
 # t2linux Resources
 
