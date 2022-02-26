@@ -5,8 +5,9 @@ cryptsetup
 device-mapper
 diffutils
 edk2-shell
-endeavouros-keyring
+archlinux-keyring
 endeavouros-mirrorlist
+endeavouros-keyring
 inetutils
 intel-ucode
 less
@@ -32,6 +33,14 @@ sysfsutils
 systemd-sysvcompat
 texinfo
 which
+vim
+
+#ISO-specific
+mkinitcpio-archiso
+syslinux
+memtest86+
+arch-install-scripts
+pv
 
 #x-system
 mesa
@@ -108,9 +117,10 @@ usbutils
 #DM
 accountsservice
 lightdm-slick-greeter
+eos-lightdm-slick-theme
 
 #xfce4-desktop
-endeavouros-skel-xfce4
+endeavouros-skel-xfce4-testing
 file-roller
 firefox
 galculator
@@ -229,10 +239,10 @@ duf
 inxi
 
 #calamares
-boost-libs
 calamares_config_ce
 calamares_config_t2
 calamares_current
+boost-libs
 cmake
 dmidecode
 doxygen
@@ -262,7 +272,6 @@ upower
 yaml-cpp
 
 #endeavouros-repo
-#arc-x-icons-theme
 arc-gtk-theme-eos
 ckbcomp
 endeavouros-theming
@@ -270,13 +279,15 @@ endeavouros-xfce4-terminal-colors
 eos-apps-info
 eos-hooks
 eos-log-tool
+eos-packagelist
+eos-quickstart
 eos-qogir-icons
 eos-rankmirrors
 eos-update-notifier
 grub2-theme-endeavouros
 meld
 mkinitcpio-openswap
-rate-mirrors-bin
+rate-mirrors
 reflector-simple
 welcome
 yad-eos
