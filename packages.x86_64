@@ -86,7 +86,6 @@ xorg-xrandr
 
 ## Network hardware
 b43-fwcutter
-broadcom-wl-dkms
 ipw2100-fw
 ipw2200-fw
 linux-atm
