@@ -24,8 +24,12 @@ jobs:
         echo "Include = /etc/pacman.d/endeavouros-mirrorlist" >> pacman.conf
         printf "\n" >> pacman.conf
         cat pacman.conf
+        wget https://github.com/endeavouros-team/PKGBUILDS/blob/master/endeavouros-keyring/endeavouros.gpg?raw=true -O endeavouros.gpg
+        pacman-key --add endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
+        pacman-key --populate
         pacman-key --recv-keys 8BE1FEE14302371DEF6F910A0E5877AC225D1980 --keyserver hkps://keyserver.ubuntu.com
         pacman-key --lsign-key 8BE1FEE14302371DEF6F910A0E5877AC225D1980
+        pacman-key --populate
         cd /build
         useradd builduser -m
         passwd -d builduser
