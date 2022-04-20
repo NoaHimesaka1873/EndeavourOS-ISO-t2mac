@@ -1,6 +1,7 @@
 # BASE
 
 ## Base system
+apple-bcm-wifi-firmware
 base
 base-devel
 archlinux-keyring
@@ -12,9 +13,9 @@ diffutils
 edk2-shell
 inetutils
 less
-linux
+linux-t2
 linux-firmware
-linux-headers
+linux-t2-headers
 logrotate
 man-db
 man-pages
@@ -72,8 +73,6 @@ intel-ucode
 ## X system
 mesa
 mesa-utils
-nvidia-dkms
-nvidia-utils
 xf86-input-libinput
 xf86-video-amdgpu
 xf86-video-ati
@@ -324,7 +323,6 @@ eos-rankmirrors
 eos-update-notifier
 grub2-theme-endeavouros
 mkinitcpio-openswap
-nvidia-installer-dkms
 rate-mirrors
 reflector-simple
 welcome
@@ -332,8 +330,8 @@ yad-eos
 yay
 
 ## Calamares EndeavourOS
-calamares_config_ce
-calamares_config_default
+calamares_config_ce_t2
+calamares_config_t2
 calamares_current
 
 

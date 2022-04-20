@@ -108,9 +108,9 @@ rm "mkinitcpio.conf" "/root/mkinitcpio.patch"
 rm -R "/boot/syslinux"
 rm -R "/boot/memtest86+"
 rm "/boot/amd-ucode.img"
-rm "/boot/initramfs-linux.img"
+rm "/boot/initramfs-linux-t2.img"
 rm "/boot/intel-ucode.img"
-rm "/boot/vmlinuz-linux"
+rm "/boot/vmlinuz-linux-t2"
 
 # to install locally builded packages on ISO (place packages under ..airootfs/root/packages)
 pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
