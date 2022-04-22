@@ -324,7 +324,7 @@ grub2-theme-endeavouros
 mkinitcpio-openswap
 rate-mirrors
 reflector-simple
-welcome
+welcome-t2
 yad-eos
 yay
 
