@@ -32,6 +32,9 @@ jobs:
         pacman-key --recv-keys 8BE1FEE14302371DEF6F910A0E5877AC225D1980 --keyserver hkps://keyserver.ubuntu.com
         pacman-key --lsign-key 8BE1FEE14302371DEF6F910A0E5877AC225D1980
         pacman-key --populate
+        pacman -S endeavouros-keyring
+        pacman-key --populate
+        pacman-key --populate archlinux
         cd /build
         useradd builduser -m
         passwd -d builduser
