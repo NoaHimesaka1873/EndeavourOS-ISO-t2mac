@@ -12,14 +12,14 @@ jobs:
       run: |
         cat << EOF > entrypoint.sh
         pacman -Syu base base-devel reflector --needed --noconfirm
-        reflector --verbose --country $(curl https://ipv4.myip.wtf/text/country) --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+        reflector --verbose --country $(curl https://ipv4.myip.wtf/text/country) --protocol http,https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
         pacman-key --init
         pacman -Syu wget --needed --noconfirm
         pacman -Syu archlinux-keyring --noconfirm
         cd /etc/pacman.d/
         touch endeavouros-mirrorlist
-        cat "Server = https://mirror.funami.tech/endeavouros/repo/$repo/$arch" > endeavouros-mirrorlist
-        cat "Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >>> endeavouros-mirrorlist
+        echo "Server = https://mirror.funami.tech/endeavouros/repo/$repo/$arch" > endeavouros-mirrorlist
+        echo "Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >>> endeavouros-mirrorlist
         cat endeavouros-mirrorlist
         cd ..
         printf "\n" >> pacman.conf
