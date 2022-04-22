@@ -18,8 +18,8 @@ jobs:
         pacman -Syu archlinux-keyring --noconfirm
         cd /etc/pacman.d/
         touch endeavouros-mirrorlist
-        echo "Server = https://mirror.funami.tech/endeavouros/repo/$repo/$arch" > endeavouros-mirrorlist
-        echo "Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >> endeavouros-mirrorlist
+        echo "Server = https://mirror.funami.tech/endeavouros/repo/\$repo/\$arch" > endeavouros-mirrorlist
+        echo "Server = https://mirror.jingk.ai/endeavouros/repo/\$repo/\$arch" >> endeavouros-mirrorlist
         cat endeavouros-mirrorlist
         cd ..
         printf "\n" >> pacman.conf
