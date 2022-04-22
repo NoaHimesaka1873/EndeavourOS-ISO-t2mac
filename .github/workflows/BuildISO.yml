@@ -17,7 +17,9 @@ jobs:
         pacman -Syu wget --needed --noconfirm
         pacman -Syu archlinux-keyring --noconfirm
         cd /etc/pacman.d/
-        wget https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist
+        touch endeavouros-mirrorlist
+        cat "Server = https://mirror.funami.tech/endeavouros/repo/$repo/$arch" > endeavouros-mirrorlist
+        cat "Server = Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >>> endeavouros-mirrorlist
         cat endeavouros-mirrorlist
         cd ..
         printf "\n" >> pacman.conf
