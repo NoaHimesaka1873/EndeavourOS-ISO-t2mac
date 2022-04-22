@@ -19,7 +19,7 @@ jobs:
         cd /etc/pacman.d/
         touch endeavouros-mirrorlist
         cat "Server = https://mirror.funami.tech/endeavouros/repo/$repo/$arch" > endeavouros-mirrorlist
-        cat "Server = Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >>> endeavouros-mirrorlist
+        cat "Server = https://mirror.jingk.ai/endeavouros/repo/$repo/$arch" >>> endeavouros-mirrorlist
         cat endeavouros-mirrorlist
         cd ..
         printf "\n" >> pacman.conf
