@@ -11,9 +11,11 @@ jobs:
       if: ${{ !contains(github.event.head_commit.message, '[no build]') }}
       run: |
         cat << EOF > entrypoint.sh
-        pacman -Syu base base-devel --needed --noconfirm
+        pacman -Syu base base-devel reflector --needed --noconfirm
+        reflector --verbose --country $(curl https://ipv4.myip.wtf/text/country) --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
         pacman-key --init
         pacman -Syu wget --needed --noconfirm
+        pacman -Syu archlinux-keyring --noconfirm
         cd /etc/pacman.d/
         wget https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist
         cat endeavouros-mirrorlist
