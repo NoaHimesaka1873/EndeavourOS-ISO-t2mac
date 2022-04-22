@@ -10,7 +10,7 @@ jobs:
     - name: Build In Docker
       if: ${{ !contains(github.event.head_commit.message, '[no build]') }}
       run: |
-        cat << EOF > entrypoint.sh
+        cat << \EOF > entrypoint.sh
         pacman -Syu base base-devel reflector --needed --noconfirm
         reflector --verbose --country $(curl https://ipv4.myip.wtf/text/country) --protocol http,https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
         pacman-key --init
