@@ -85,8 +85,6 @@ systemctl enable vboxservice.service vmtoolsd.service vmware-vmblock-fuse.servic
 systemctl set-default multi-user.target
 
 # revert from arch-iso preset to default preset
-cp -rf "/usr/share/mkinitcpio/hook.preset" "/etc/mkinitcpio.d/linux.preset"
-sed -i 's?%PKGBASE%?linux?' "/etc/mkinitcpio.d/linux.preset"
 
 # fetch fallback mirrorlist for offline installs:
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist
@@ -113,6 +111,7 @@ rm "/boot/intel-ucode.img"
 rm "/boot/vmlinuz-linux-t2"
 
 # to install locally builded packages on ISO (place packages under ..airootfs/root/packages)
+pacman -U --noconfirm "https://archive.archlinux.org/packages/k/kpmcore/kpmcore-21.12.3-1-x86_64.pkg.tar.zst"
 pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
 rm -rf "/root/packages/"
 #rm "/var/log/pacman.log"
