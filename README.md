@@ -1,3 +1,8 @@
+# EndeavourOS-ISO-t2
+Modified version of endeavouros-team/EndeavourOS-ISO for Macs with Apple T2 security chip.
+Changes include device-specific kernel, firmware, modified Calamares script to install such things.
+Read below for original details.
+
 # EndeavourOS-ISO
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
