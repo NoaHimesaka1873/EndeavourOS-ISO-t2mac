@@ -13,9 +13,9 @@ diffutils
 edk2-shell
 inetutils
 less
-linux
+linux-t2
 linux-firmware
-linux-headers
+linux-t2-headers
 logrotate
 man-db
 man-pages
@@ -67,14 +67,11 @@ refind
 # HARDWARE
 
 ## CPU
-amd-ucode
 intel-ucode
 
 ## X system
 mesa
 mesa-utils
-nvidia-dkms
-nvidia-utils
 xf86-input-libinput
 xf86-video-amdgpu
 xf86-video-ati
@@ -87,8 +84,7 @@ xorg-xkill
 xorg-xrandr
 
 ## Network hardware
-b43-fwcutter
-broadcom-wl-dkms
+apple-bcm-wifi-firmware
 ipw2100-fw
 ipw2200-fw
 linux-atm
@@ -296,8 +292,8 @@ yad-eos
 yay
 
 ## Calamares EndeavourOS
-calamares_config_ce
-calamares_config_default
+calamares_config_ce_t2
+calamares_config_t2
 calamares_current
 ckbcomp
 kvantum

@@ -76,10 +76,9 @@ rm "mkinitcpio.conf" "/root/mkinitcpio.patch"
 # Remove unneeded grub stuff from /boot
 rm -R "/boot/syslinux"
 rm -R "/boot/memtest86+"
-rm "/boot/amd-ucode.img"
-rm "/boot/initramfs-linux.img"
+rm "/boot/initramfs-linux-t2.img"
 rm "/boot/intel-ucode.img"
-rm "/boot/vmlinuz-linux"
+rm "/boot/vmlinuz-linux-t2"
 
 # Install locally builded packages on ISO (place packages under airootfs/root/packages)
 pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
@@ -102,7 +101,7 @@ cp -af "/home/liveuser/"{".bashrc",".bash_profile"} "/etc/skel/"
 mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
 mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
 
-# Get extra drivers!
+# Get extra drivers!:
 mkdir "/opt/extra-drivers"
 sudo pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
 
