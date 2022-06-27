@@ -42,7 +42,7 @@ jobs:
         passwd -d builduser
         pacman -Syu --noconfirm --needed sudo git base-devel
         pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed --noconfirm
-        printf 'builduser ALL=(ALL) ALL\\n' | tee -a /etc/sudoers
+        printf "builduser ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
         chown -R builduser:builduser ./
         ./fix_permissions.sh
         ./mkarchiso "."
