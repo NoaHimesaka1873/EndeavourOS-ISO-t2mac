@@ -44,7 +44,7 @@ jobs:
         pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed --noconfirm
         printf "builduser ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
         chown -R builduser:builduser ./
-        ./prepare.sh
+        sudo -u builduser bash ./prepare.sh
         ./mkarchiso "."
         EOF
 
