@@ -108,6 +108,9 @@ sudo pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
 # Clean pacman log
 rm "/var/log/pacman.log"
 
+# remove /etc/mkinitcpio.d/linux.preset for sure
+sudo rm /etc/mkinitcpio.d/linux.preset
+
 echo "############################"
 echo "# end chrooted commandlist #"
 echo "############################"
