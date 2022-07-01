@@ -105,7 +105,7 @@ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-
 mkdir -p "/opt/extra-drivers/mba91"
 sudo pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" apple-t2-audio-config apple-t2-audio-config-alt 
 wget -P /opt/extra-drivers/mba91 "https://gist.githubusercontent.com/bigbadmonster17/8b670ae29e0b7be2b73887f3f37a057b/raw/b2fc3ca90e727cb7d213dd6362cc4671f7515f65/91-pulseaudio-custom.rules"
-wget -P /opt/extra-driver/mba91 "https://gist.githubusercontent.com/bigbadmonster17/8b670ae29e0b7be2b73887f3f37a057b/raw/b2fc3ca90e727cb7d213dd6362cc4671f7515f65/apple-t2.conf"
+wget -P /opt/extra-drivers/mba91 "https://gist.githubusercontent.com/bigbadmonster17/8b670ae29e0b7be2b73887f3f37a057b/raw/b2fc3ca90e727cb7d213dd6362cc4671f7515f65/apple-t2.conf"
 wget -P /opt/extra-drivers/mba91 "https://gist.githubusercontent.com/bigbadmonster17/8b670ae29e0b7be2b73887f3f37a057b/raw/b2fc3ca90e727cb7d213dd6362cc4671f7515f65/AppleT2.conf"
 
 # Clean pacman log
