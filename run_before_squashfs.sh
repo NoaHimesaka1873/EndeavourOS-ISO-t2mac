@@ -77,7 +77,7 @@ rm "mkinitcpio.conf" "/root/mkinitcpio.patch"
 rm -R "/boot/syslinux"
 rm -R "/boot/memtest86+"
 rm "/boot/initramfs-linux-t2.img"
-rm "/boot/intel-ucode.img"
+#rm "/boot/intel-ucode.img"
 rm "/boot/vmlinuz-linux-t2"
 
 # Install locally builded packages on ISO (place packages under airootfs/root/packages)
