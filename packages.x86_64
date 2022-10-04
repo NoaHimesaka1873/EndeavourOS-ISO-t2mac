@@ -2,6 +2,7 @@
 
 ## Base system
 iptables-nft
+apple-t2-audio-config
 base
 base-devel
 archlinux-keyring
