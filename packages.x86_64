@@ -84,9 +84,7 @@ xorg-xkill
 xorg-xrandr
 
 ## Network hardware
-apple-bcm-wifi-firmware
-ipw2100-fw
-ipw2200-fw
+apple-bcm-firmware
 linux-atm
 
 ## General hardware
