@@ -86,8 +86,6 @@ xorg-xrandr
 
 ## Network hardware
 b43-fwcutter
-ipw2100-fw
-ipw2200-fw
 linux-atm
 
 ## General hardware
@@ -320,7 +318,6 @@ eos-quickstart
 eos-qogir-icons
 eos-rankmirrors
 eos-update-notifier
-grub2-theme-endeavouros
 mkinitcpio-openswap
 rate-mirrors
 reflector-simple
