@@ -1,6 +1,8 @@
 # BASE
 
 ## Base system
+apple-bcm-firmware
+apple-t2-audio-config
 iptables-nft
 base
 base-devel
@@ -14,9 +16,9 @@ dracut
 edk2-shell
 inetutils
 less
-linux
+linux-t2
 linux-firmware
-linux-headers
+linux-t2-headers
 logrotate
 lsb-release
 man-db
@@ -61,17 +63,13 @@ efitools
 # HARDWARE
 
 ## CPU
-amd-ucode
 intel-ucode
 
 ## X system
 mesa
 mesa-utils
-nvidia-dkms
-nvidia-utils
 xf86-input-libinput
 xf86-video-amdgpu
-xf86-video-ati
 xf86-video-intel
 xorg-server
 xorg-xdpyinfo
@@ -79,10 +77,6 @@ xorg-xinit
 xorg-xinput
 xorg-xkill
 xorg-xrandr
-
-## Network hardware
-b43-fwcutter
-broadcom-wl-dkms
 
 ## General hardware
 lsscsi
@@ -281,7 +275,7 @@ welcome
 yay
 
 ## Calamares EndeavourOS
-calamares
+calamares-eos-t2
 ckbcomp
 kvantum
 qt5ct
