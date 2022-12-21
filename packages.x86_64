@@ -61,6 +61,7 @@ efibootmgr
 efitools
 
 # HARDWARE
+bolt
 
 ## CPU
 intel-ucode
