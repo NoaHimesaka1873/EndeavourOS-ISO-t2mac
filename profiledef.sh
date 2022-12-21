@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="endeavouros-t2"
-iso_label="EOS_T2_$(date +%Y%m)"
+iso_label="EOS_T2_CASSINI"
 iso_publisher="t2linux <https://t2linux.org>"
 iso_application="EndeavourOS Live/Rescue CD for Macs with T2 security chip"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="Cassini-T2"
 install_dir="arch"
 buildmodes=('iso')
 quiet="n"
