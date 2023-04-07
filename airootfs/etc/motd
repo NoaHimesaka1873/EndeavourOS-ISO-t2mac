@@ -1,5 +1,9 @@
 This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
+https://t2linux.org
 https://endeavouros.com
+
+EndeavourOS-archiso-t2 Sources:
+https://github.com/t2linux/EndeavourOS-ISO-t2
 
 EndeavourOS-archiso Sources: 
 https://github.com/endeavouros-team/EndeavourOS-ISO
@@ -13,14 +17,15 @@ https://github.com/calamares/calamares
 Live environment will start now and let you install EndeavourOS to disk, or tryout XFCE4-Desktop from Live-Session.
 
 Bugs can be reported here:
-https://forum.endeavouros.com/c/Arch-based-related-questions/bug-reports
+https://discord.com/invite/68MRhQu
 
-Getting help at the forum: https://forum.endeavouros.com
-Help-Chat is available on telegram: https://t.me/Endeavouros/
-News at twitter: https://twitter.com/OsEndeavour
-Help and talk at reddit: https://www.reddit.com/r/EndeavourOS/
+Getting help at Discord: https://discord.com/invite/68MRhQu 
+Upstream News at Twitter: https://twitter.com/OsEndeavour
 
-Our journey wouldn't be made possible without the generosity of our open collective community:
+Donate to T2 fork developer:
+https://github.com/sponsors/NoaHimesaka1873
+https://toss.me/yuruverse
+Donate to EndeavourOS team:
 https://opencollective.com/endeavouros
 
 Thank you for donating your trust in us!
