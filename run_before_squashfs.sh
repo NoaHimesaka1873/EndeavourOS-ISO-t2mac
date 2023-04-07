@@ -58,7 +58,7 @@ echo "------------------" >> "/etc/motd"
 
 # Enable systemd services
 systemctl enable NetworkManager.service systemd-timesyncd.service bluetooth.service firewalld.service
-systemctl enable vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service
+systemctl enable vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service touchbard.service
 systemctl set-default multi-user.target
 systemctl enable intel.service
 
