@@ -2,7 +2,7 @@
 
 Forked EndeavourOS-ISO for Macs with T2 security chip
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
 **main** branch is development latest (unstable)
 
@@ -22,7 +22,7 @@ More info at [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io
 
 ## Resources:
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/Artemis/Artemis-LiveSession.png" alt="Installer LiveSession" width="600"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/Cassini/cassini_neo_livesession.png" alt="Installer LiveSession" width="600"/>
 
 - https://endeavouros.com
 - [Getting help at the forum](https://forum.endeavouros.com)
@@ -37,7 +37,7 @@ Our journey wouldn't be made possible without the generosity of our [Open Collec
 ### Development source
 
 - [EndeavourOS-ISO source](https://github.com/endeavouros-team/EndeavourOS-ISO) (Live environment with XFCE4-Desktop)
-- [EndeavourOS-calamares](https://github.com/endeavouros-team/EndeavourOS-calamares) (installer framework)
+- [Calamares {EndeavourOS fork}](https://github.com/endeavouros-team/calamares) (installer framework)
 
 
 ### Base source
@@ -63,7 +63,7 @@ You need to use an installed EndeavourOS system or any archbased system with End
 
 As the installer packages and needed dependencies will get installed from EndeavourOS repository.
 
-general information: 
+General information: 
 
 https://endeavouros-team.github.io/EndeavourOS-Development/
 
@@ -87,12 +87,19 @@ https://github.com/endeavouros-team/EndeavourOS-ISO/tags
 
 If not you will use latest "unstable" development state.
 
-use last stable release (exemple for 22.9 Artemis-nova Release):
+use last stable release (exemple for 22.12.2 Cassini nova Release)
 
 ```
-wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/22.9.tar.gz
-tar -xvf 22.9.tar.gz
-cd "EndeavourOS-ISO-22.9"
+wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/22.12.2.tar.gz
+tar -xvf 22.12.2.tar.gz
+cd "EndeavourOS-ISO-22.12.2"
+./prepare.sh
+```
+### Or use latest **unstable** debvelopment (git) by clone this repo:
+
+```
+git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
+cd EndeavourOS-ISO
 ./prepare.sh
 ```
 
