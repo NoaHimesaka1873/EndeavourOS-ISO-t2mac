@@ -2,6 +2,10 @@
 
 Forked EndeavourOS-ISO for Macs with T2 security chip
 
+# EndeavourOS-ISO
+
+(Do note this is straight from original repository, some T2 features are not described here)
+
 [![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
 **main** branch is development latest (unstable)
