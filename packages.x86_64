@@ -2,6 +2,8 @@
 
 ## Base system
 iptables-nft
+apple-bcm-firmware
+apple-t2-audio-config
 base
 base-devel
 archlinux-keyring
@@ -14,10 +16,9 @@ dracut
 edk2-shell
 inetutils
 less
-linux
+linux-t2
 linux-firmware
-linux-firmware-marvell
-linux-headers
+linux-t2-headers
 logrotate
 lsb-release
 man-db
@@ -30,7 +31,9 @@ s-nail
 sudo
 sysfsutils
 systemd-sysvcompat
+t2fand
 texinfo
+touchbard
 which
 vi
 
@@ -75,8 +78,6 @@ xorg-xkill
 xorg-xrandr
 
 ## Network hardware
-b43-fwcutter
-broadcom-wl-dkms
 
 ## General hardware
 lsscsi
