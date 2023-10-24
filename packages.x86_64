@@ -6,6 +6,7 @@ apple-bcm-firmware
 apple-t2-audio-config
 base
 base-devel
+bolt
 archlinux-keyring
 endeavouros-mirrorlist
 endeavouros-keyring
@@ -228,6 +229,7 @@ plasma-disks
 plasma-nm
 plasma-pa
 plasma-systemmonitor
+plasma-thunderbolt
 powerdevil
 sddm-kcm
 spectacle
