@@ -88,12 +88,14 @@ https://github.com/endeavouros-team/EndeavourOS-ISO/tags
 
 If not, it will default to using the latest "unstable" development state.
 
-example using latest **stable** release (23.10.1 Galileo KDE Release)
+example using latest **stable** release (23.11.1.2 Galileo KDE Release) 
+
+**Warning:** do **not** use the zip tarball, in case this causes issues with symlinks.
 
 ```
-wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/23.10.1.tar.gz
-tar -xvf 23.10.1.tar.gz
-cd "EndeavourOS-ISO-23.10.1"
+wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/23.11.1.2.tar.gz
+tar -xvf 23.11.1.2.tar.gz
+cd "EndeavourOS-ISO-23.11.1.2"
 ./prepare.sh
 ```
 ### Or use latest **unstable** development branch using by cloning this repo using git:
@@ -112,7 +114,7 @@ tar -xvf 22.12.2.tar.gz
 cd "EndeavourOS-ISO-22.12.2"
 ./prepare.sh
 ```
-But caused by the change to KDE these iso will use XFCE4 LiveSession and you will need to build calamares manually:
+But caused by the change to KDE these iso will use XFCE4 LiveSession and you will need to build calamares manually to get old style theming that is setup for the XFCE4 LiveSession:
 
 using this PKGBUILD: 
 https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/18e3f580abb68486091492168956619bb0f32abe/calamares/PKGBUILD
