@@ -49,10 +49,7 @@ jobs:
         sudo -u builduser bash ./prepare.sh
         ./mkarchiso "."
         EOF
-
         
-        
-
         docker run --privileged -t -v $PWD:/build archlinux /bin/bash /build/entrypoint.sh
     
     - name: Upload Built ISO
