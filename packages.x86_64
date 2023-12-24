@@ -214,7 +214,7 @@ kate
 kdeplasma-addons
 kdeconnect
 kde-gtk-config
-kgamma5
+kgamma
 khotkeys
 kimageformats5
 kinfocenter
@@ -234,12 +234,6 @@ powerdevil
 sddm-kcm
 spectacle
 xsettingsd
-
-## Editor
-kate
-
-## Archive
-file-roller
 
 ## Browser
 firefox
