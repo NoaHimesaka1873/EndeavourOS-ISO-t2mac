@@ -1,6 +1,6 @@
 # EndeavourOS-ISO-t2
 
-Forked EndeavourOS-ISO for Macs with T2 security chip
+Forked EndeavourOS-ISO for Macs with T2 security chip, nothing more, nothing less.
 
 # EndeavourOS-ISO
 
