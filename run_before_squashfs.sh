@@ -30,6 +30,10 @@ pacman-key --init
 pacman-key --populate archlinux endeavouros
 pacman -Syy
 
+# backup bash configs from skel to replace after liveuser creation
+mkdir -p "/root/filebackups/"
+cp -af "/etc/skel/"{".bashrc",".bash_profile"} "/root/filebackups/"
+
 # Install liveuser skel (in case of conflicts use overwrite)
 pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
 
@@ -46,7 +50,7 @@ useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' 
 cp "/root/liveuser.png" "/var/lib/AccountsService/icons/liveuser"
 rm "/root/liveuser.png"
 
-# Remove liveuser skel to then install user skel
+# Remove liveuser skel to clean for target skel
 pacman -Rns --noconfirm -- "endeavouros-skel-liveuser"
 rm -rf "/root/endeavouros-skel-liveuser"
 
@@ -59,7 +63,8 @@ cat "/usr/lib/endeavouros-release" >> "/etc/motd"
 echo "------------------" >> "/etc/motd"
 
 # Install locally builded packages on ISO (place packages under airootfs/root/packages)
-pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
+ls "/root/packages/"
+pacman -U --noconfirm --needed -- "/root/packages/"*".pkg.tar.zst"
 rm -rf "/root/packages/"
 
 # Enable systemd services
@@ -74,21 +79,21 @@ mv "endeavouros-wallpaper.png" "/etc/calamares/files/endeavouros-wallpaper.png"
 mv "/root/livewall.png" "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png"
 chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
 
-# TEMPORARY CUSTOM FIXES
+# CUSTOM FIXES
 
-# Fix for getting bash configs installed
-cp -af "/home/liveuser/"{".bashrc",".bash_profile"} "/etc/skel/"
+# install bash configs back into /etc/skel for offline install target
+cp -af "/root/filebackups/"{".bashrc",".bash_profile"} "/etc/skel/"
 
 # Move blacklisting nouveau out of ISO (copy back to target for offline installs)
 mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
 mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
 
-# Get extra drivers!
+# Get extra drivers
 mkdir "/opt/extra-drivers"
 pacman -Syy
 pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
 
-# install packages
+# get needed packages for offline installs
 mkdir -p "/usr/share/packages"
 pacman -Sw --noconfirm --cachedir "/usr/share/packages" grub eos-dracut kernel-install-for-dracut os-prober xf86-video-intel
 
@@ -98,7 +103,7 @@ rm "/var/log/pacman.log"
 rm -rf "/var/cache/pacman/pkg/"
 
 #calamares BUG https://github.com/calamares/calamares/issues/2075
-rm -rf /home/build
+#rm -rf /home/build
 
 #create package versions file
 pacman -Qs | grep "/calamares " | cut -c7- > iso_package_versions

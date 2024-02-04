@@ -1,18 +1,22 @@
 #!/bin/bash
 #
-# This file can contain commands that will be executed at the end of
-# EndeavourOS install (online mode only) on the target system.
-# The commands will be executed as root.
+# This file can contain commands that will be executed (as root) at the end of
+# EndeavourOS install (in online mode only) on the target system.
 #
-# This allows you to customize the installed system in several ways!
+# NOTE! This is an advanced feature, so you need to know exactly
+# what you are doing. Otherwise bad things can happen...
+# Sound knowledge of bash language and linux commands is required
+# for a meaningful customization.
 #
-# If you add commands to this file, start the install process after
-# saving this file.
+# If you add commands to this file, start the whole install process fresh
+# with terminal command 'eos-welcome' after saving this file.
 #
 # Tip: save your customized commands into a file on an internet server
 # and fetch that file with command:
 #
 #     wget -O ~/user_commands.bash "URL-referring-the-file"
+#
+# Here you may customize the installed system in several ways.
 #
 # Ideas for customization:
 #   - install packages
@@ -22,7 +26,6 @@
 #   - etc.
 #
 # Example commands:
-#
 #     pacman -S --noconfirm --needed gufw geany chromium
 #     pacman -Rsn --noconfirm xed
 #     systemctl enable ufw
@@ -36,34 +39,35 @@
 #     The 'makepkg' command suffers from the same limitation.
 #     This essentially blocks installing AUR packages here.
 #
-# Advanced tip (for ISOs since year 2022):
-#    To write files directly into $HOME, you can find the new username
-#    as the first parameter given to user_commands.bash, e.g.
-#        username="$1"
-#    Then you may write files under folder
-#        /home/$username
-#
-# For ISOs released before year 2022:
-#    Find your new username with command
-#        username=$(cat /tmp/new_username.txt)
-#
-# New installer feature at 2023-Feb-02:
-#    To help customizing calamares on the ISO, user_commands.bash will be called
-#    (as root) with 2 parameters:
-#        --iso-config
-#        "install_mode"     (one of: online, offline, community)
-#    before starting the calamares installer.
-#    For example:
-#        bash ~/user_commands.bash --iso-config online
+# Tip: if you write new files into the home directory of the new user,
+# make sure to properly set the file permissions too.
 #
 #----------------------------------------------------------------------------------
-# Full example (to try it, remove the first '#' from the lines below):
 #
-# #!/bin/bash
+# Now *you* can add your commands into function _PostInstallCommands below.
 #
-# # Note: needs ISO since year 2022
-#
-# username="$1"
-# echo "# Hello world!" >> /home/$username/.bashrc
-# pacman -S --noconfirm --needed geany chromium libreoffice-fresh
+#----------------------------------------------------------------------------------
 
+_PostInstallCommands() {
+    ## Add your "late-install" commands here.
+    ## This is executed as root near the end of calamares execution.
+
+    local -r username="$1"              # new user you created for the target
+
+    ## Now your commands. Some examples:
+    #
+    # echo "## Hello world!"           >> /home/$username/.bashrc
+    # echo "export FUNCNEST=100"       >> /home/$username/.bashrc
+    # echo "alias pacdiff=eos-pacdiff" >> /home/$username/.bashrc
+    # chmod $username:$username           /home/$username/.bashrc
+    #
+    # pacman -S --noconfirm --needed geany chromium libreoffice-fresh
+    # ...
+}
+
+## Execute the commands if the parameter list is valid:
+
+case "$1" in
+    --iso-conf* | online | offline | community) ;;   # no more supported here
+    *) _PostInstallCommands "$1" ;;
+esac
