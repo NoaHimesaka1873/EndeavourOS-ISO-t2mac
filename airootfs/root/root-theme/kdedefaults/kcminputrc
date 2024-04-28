@@ -1,2 +1,3 @@
 [Mouse]
-cursorTheme=breeze_cursors
+X11LibInputXAccelProfileFlat=true
+cursorTheme=Breeze_Light

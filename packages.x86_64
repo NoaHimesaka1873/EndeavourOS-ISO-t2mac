@@ -66,8 +66,6 @@ intel-ucode
 ## X system
 mesa
 mesa-utils
-nvidia-dkms
-nvidia-utils
 xf86-input-libinput
 xf86-video-amdgpu
 xf86-video-ati
@@ -90,7 +88,6 @@ usbutils
 alsa-firmware
 alsa-plugins
 alsa-utils
-ffmpegthumbnailer
 gst-libav
 gst-plugin-pipewire
 gst-plugins-bad
@@ -145,7 +142,6 @@ xz
 
 ## Network
 bind
-dhclient
 dnsmasq
 ethtool
 iwd
@@ -192,7 +188,9 @@ syslinux
 
 ## Live iso tools
 clonezilla
+efitools
 gpart
+gparted
 grsync
 partitionmanager
 hdparm
@@ -206,33 +204,47 @@ breeze-gtk
 dolphin
 dolphin-plugins
 eos-plasma-sddm-config
+ffmpegthumbs
+fwupd
 gwenview
 haruna
-kcalc
 kate
-kdeplasma-addons
-kdeconnect
+kcalc
+kde-cli-tools
 kde-gtk-config
+kdeconnect
+kdegraphics-thumbnailers
+kdenetwork-filesharing
+kdeplasma-addons
 kgamma
-khotkeys
-kimageformats5
+kimageformats
 kinfocenter
-kinit
+kio-admin
+kio-extras
 kio-fuse
 konsole
 kscreen
 kwallet-pam
+kwayland-integration
+libappindicator-gtk3
+maliit-keyboard
 okular
+plasma-browser-integration
 plasma-desktop
 plasma-disks
+plasma-firewall
 plasma-nm
 plasma-pa
 plasma-systemmonitor
 plasma-thunderbolt
+plasma-workspace
 powerdevil
+print-manager
 sddm-kcm
 spectacle
+xdg-desktop-portal-kde
 xsettingsd
+xwaylandvideobridge
 
 ## Browser
 firefox
@@ -261,7 +273,6 @@ eos-log-tool
 eos-packagelist
 eos-quickstart
 eos-rankmirrors
-eos-update-notifier
 nvidia-inst
 rate-mirrors
 reflector-simple
@@ -289,6 +300,3 @@ open-vm-tools
 xf86-input-vmmouse
 xf86-video-vmware
 xf86-video-qxl
-
-# eos-arm needed packages for chroot into arm device
-qemu-arm-aarch64-static-bin

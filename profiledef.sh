@@ -2,16 +2,16 @@
 # shellcheck disable=SC2034
 
 iso_name="EndeavourOS-T2"
-iso_label="EOS_T2_GALILEO_NEO"
+iso_label="EOS_T2_GEMINI"
 iso_publisher="t2linux <https://t2linux.org>"
 iso_application="EndeavourOS Live/Rescue CD for Macs with T2 security chip"
-iso_version="Galileo Neo-T2"
+iso_version="Gemini-T2"
 install_dir="arch"
 buildmodes=('iso')
 quiet="n"
 work_dir="work"
 out_dir="out"
-bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito' 'uefi-ia32.systemd-boot.eltorito' 'uefi-ia32.systemd-boot.esp')
+bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
 
 arch="x86_64"
 pacman_conf="airootfs/etc/pacman.conf"

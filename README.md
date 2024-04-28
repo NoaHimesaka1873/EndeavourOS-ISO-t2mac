@@ -149,3 +149,17 @@ airootfs/root/packages
 ~~~
 
 Packages will be installed and the directory will be cleaned up after that.
+
+
+## General  ISO naming:
+
+Example:
+
+~~~
+EndeavourOS_Galileo-Neo-2024.01.25.iso
+~~~
+
+**EndeavourOS_RELEASENAMEREBUILD-YYYY.MM.DD.iso**
+
+* YYYY.MM.DD: of the release 
+* REBUILD: (empty), -Neo, -Nova 
