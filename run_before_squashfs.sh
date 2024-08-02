@@ -91,7 +91,7 @@ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-
 # Get extra drivers
 mkdir "/opt/extra-drivers"
 pacman -Syy
-pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
+# pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
 
 # get needed packages for offline installs
 mkdir -p "/usr/share/packages"
@@ -109,7 +109,7 @@ pacman -Qs | grep "/firefox " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/linux " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/mesa " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/xorg-server " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/nvidia-dkms " | cut -c7- >> iso_package_versions
+pacman -Qs | grep "/nvidia " | cut -c7- >> iso_package_versions
 mv "iso_package_versions" "/home/liveuser/"
 
 echo "############################"
