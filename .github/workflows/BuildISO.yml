@@ -60,13 +60,13 @@ jobs:
         path: ${{ github.workspace }}/out/*.iso
     - name: Create Tag
       id: create_tag
-      if: ${{ github.ref == 'refs/heads/gemini' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
+      if: ${{ github.ref == 'refs/heads/endeavour' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
       run: |
         export TAG=$(date +%Y.%m.%d)
         echo "::set-output name=tag::${TAG}"
         echo $TAG
     - name: Release
-      if: ${{ github.ref == 'refs/heads/gemini' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
+      if: ${{ github.ref == 'refs/heads/endeavour' && !contains(github.event.head_commit.message, '[no rel]') && !contains(github.event.head_commit.message, '[no build]') }}
       uses: softprops/action-gh-release@v1
       with:
          files: |
