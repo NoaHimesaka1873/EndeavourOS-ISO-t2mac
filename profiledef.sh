@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="EndeavourOS-T2"
-iso_label="EOS_T2_ENDEAVOUR"
+iso_label="EOS_T2_ENDEAVOUR_NEO"
 iso_publisher="t2linux <https://t2linux.org>"
 iso_application="EndeavourOS Live/Rescue CD for Macs with T2 security chip"
-iso_version="Endeavour-T2"
+iso_version="Endeavour Neo-T2"
 install_dir="arch"
 buildmodes=('iso')
 quiet="n"
